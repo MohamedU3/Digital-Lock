@@ -11,7 +11,7 @@
 //SET CURSOR POSITION: LCD_SET_CURSOR(unsigned char r,unsigned char c)
 #include "EEPROM_.h"
 //FUNCTIONS OF EEPROM.h 
-//EEPROM_write(uint8_t address,uint8_t data)->write data to address ,EEPROM_read(uint8_t address)->returns data
+//EEPROM_Write(uint8_t address,uint8_t data)->write data to address ,EEPROM_Read(uint8_t address)->returns data
 #define _XTAL_FREQ 4000000
 #define keypad_1 RD0
 #define keypad_2 RD1
