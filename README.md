@@ -7,6 +7,7 @@ So I implemented all of the LCD and EEPROM initializations and commands from scr
 
 Implemetaions:
 Both of the LCD and EEPROM are implemented into source and header files.
+The HEX file for proteus is called digital_lock.hex, you will find it with the files uploaded.
 
 Code explanation:
 The code is written on MPLAB X IDE, It comments explaining everything (almost everything).
