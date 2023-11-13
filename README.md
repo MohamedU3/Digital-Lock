@@ -5,6 +5,8 @@ I got an idea to make a digital lock and decided to use LCD to interface everyth
 I wanted to add a keypad in the beginning but decided to just go with 4 buttons (which are a small part of a keypad) and adjusted the code to be flexible so that I can easily add any type of keypad later, buttons are 1, 2, back and enter(back could be the symbol "*" and enter could be "#" on the keypay, but you can set them to anything you want).
 So I implemented all of the LCD and EEPROM initializations and commands from scratch and wrote the code for the lock.
 
+Implemetaions:
+Both of the LCD and EEPROM are implemented into source and header files.
 
 Code explanation:
 The code is written on MPLAB X IDE, It comments explaining everything (almost everything).
