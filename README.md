@@ -11,13 +11,13 @@ So I implemented all of the LCD and EEPROM initializations and commands from scr
 2-if you want to run it on proteus make sure you add the HEX file to the PIC MCU on proteus
 
 # Code explanation:
-The code is written on MPLAB X IDE, It comments explaining everything (almost everything).
-The main trick of the code is that 1 and 2 buttons on the keypad have two functions:
-1- if you are in the main menu, 1 and 2 buttons aren't inputs for password instead they are used to chose between the first and second option on the screen, these options are "1- Enter pass 2-New Pass".
-2-if you are in one of the options then this means that the buttons are used for input to enter a password.
+The code is written on MPLAB X IDE, It has comments explaining everything (almost everything).
+The main trick of the code is that the "1" and "2" buttons have two functions:
+1- if you are in the main menu then 1 and 2 buttons aren't inputs for a password, instead they are used to choose between options on the screen and these options are "1- Enter pass 2-New Pass".
+2-if you are in one of the options, this means that the buttons are used for input to enter a password.
 That's why I decided to use multiple flags to indicate which screen you are on and based on it the functions of the button will change(flags are explained in comments).
 I am willing to add a feature in the future to give you 3 attempts to enter the password and if you failed you will get a 5-min cooldown, that's why TMR1 module initializations 
-are implemented in the code to add that feature in the future.
+are implemented in the code.
 
 # How it works?
 When you first start the digital lock it will ask you to set your first password, after that it will show you the main menu which has 2 options : 1- enter pass 2-change the current pass.
