@@ -1,28 +1,17 @@
 # Digital-Lock
 
-## Why did I do this project?
-I challenged myself to do a project on the things that I have learned on the first edition of the PIC tutorial so I decided to do a project on EEPROM.
-I got an idea to make a digital lock and decided to use LCD to interface everything (without I2C) and chose 4 bit mode for the LCD.
-I wanted to add a keypad in the beginning but decided to just go with 4 buttons (which are a small part of a keypad) and adjusted the code to be flexible so that I can easily add any type of keypad later, buttons are 1, 2, back and enter(back could be the symbol "*" and enter could be "#" on the keypay, but you can set them to anything you want).
-So I implemented all of the LCD and EEPROM initializations and commands from scratch and wrote the code for the lock.
+## Motivation
+This project stemmed from a desire to apply my learnings from the initial PIC tutorial. I chose to delve into EEPROM functionality, conceptualizing a digital lock interfaced with an LCD. I opted for a 4-bit LCD mode to interface without I2C. Initially considering a keypad, I streamlined the design to incorporate four buttons, primed for future keypad integration. The buttons (1, 2, back, enter) were adaptable, allowing flexible customization (back symbolized as "*" and enter as "#"). The code was meticulously crafted to accommodate future expansions effortlessly.
 
-## How to Install and Run the Project
-1-Make sure to load and include all of the LCD and EEPROM source and header files.
-2-if you want to run it on proteus make sure you add the HEX file to the PIC MCU on proteus
+## Installation and Execution
+1- Ensure inclusion of all LCD and EEPROM source and header files.
+2- For Proteus simulation, load the HEX file onto the PIC MCU.
 
-## Code explanation
-The code is written on MPLAB X IDE, It has comments explaining everything (almost everything).
-The main trick of the code is that the "1" and "2" buttons have two functions:
-1- if you are in the main menu then 1 and 2 buttons aren't inputs for a password, instead they are used to choose between options on the screen and these options are "1- Enter pass 2-New Pass".
-2-if you are in one of the options, this means that the buttons are used for input to enter a password.
-That's why I decided to use multiple flags to indicate which screen you are on and based on it the functions of the button will change(flags are explained in comments).
-I am willing to add a feature in the future to give you 3 attempts to enter the password and if you failed you will get a 5-min cooldown, that's why TMR1 module initializations 
-are implemented in the code.
+## Code Overview
+Developed using MPLAB X IDE, the code features comprehensive comments elucidating the system's functioning. Key to the code's versatility is the dual functionality of "1" and "2" buttons—navigational on the main menu and as password inputs in other screens. The code utilizes flags to determine the active screen, enabling dynamic button functionalities (flag explanations provided in comments). Future enhancements are planned, incorporating a three-attempt password feature with a 5-minute cooldown, for which the groundwork with TMR1 module initializations has been laid.
 
-## How does it work?
-When you first start the digital lock it will ask you to set your first password, after that it will show you the main menu which has 2 options : 1- enter pass 2-change the current pass.
-If you turn the lock off and on again it won't show you the same screen that it showed you when you first started it, that's because password is already set, also password won't be deleted if it's shut on and off (obviously, I mean it's a lock duuh 🤓?).
-You can change the pass by pressing 2 and typing the old pass first then you can set the new one, if you enter the password incorrectly it will show you "Pass Incorrect" and it sends you back to the main menu, I am willing to add a feature in the future to give you 3 attempts to enter the password and if you failed you will get a 5-min cooldown, I already have TMR1 module initializations implemented in the code to add that feature in the future.
+## Functionality
+Upon startup, the digital lock prompts the user to set an initial password. The main menu presents two options: entering the password or changing it. Notably, the lock retains the password even after power cycles, ensuring continued security. Password modification requires entry of the old password followed by the new one. Incorrect password inputs redirect users to the main menu. Future developments will include a three-attempt mechanism with a cooldown period, facilitated by existing TMR1 module initializations.
 
-## Code adjument
-if you wanted to add a keypad you have to change the name of the buttons pressed and then copy the code for the buttons 1,2 and paste that same code on every other number on the keypad from 0~9 (I recommend making a function that gets a char based on the number instead of copy and pasting).
+## Code Adaptation
+To integrate a keypad, modification involves renaming the button inputs and replicating the code logic across the keypad digits (0-9). Encouraging code modularity, it's advisable to create a function that retrieves characters based on the keypad digits rather than direct replication.
