@@ -5,6 +5,7 @@ This project stemmed from a desire to apply my learnings from the initial PIC tu
 
 ## Installation and Execution
 1- Ensure inclusion of all LCD and EEPROM source and header files.
+
 2- For Proteus simulation, load the HEX file onto the PIC MCU.
 
 ## Code Overview
