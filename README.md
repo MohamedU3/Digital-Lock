@@ -1,18 +1,17 @@
 # Digital-Lock
 
 ## Motivation
-This project stemmed from a desire to apply my learnings from the initial PIC tutorial. I chose to delve into EEPROM functionality, conceptualizing a digital lock interfaced with an LCD. I opted for a 4-bit LCD mode to interface without I2C. Initially considering a keypad, I streamlined the design to incorporate four buttons, primed for future keypad integration. The buttons (1, 2, back, enter) were adaptable, allowing flexible customization (back symbolized as "*" and enter as "#"). The code was meticulously crafted to accommodate future expansions effortlessly.
+This project was born out of the initial PIC tutorial and evolved to explore EEPROM functionality, focusing on a digital lock integrated with an LCD. Transitioning to a keypad interface from the initial 4 buttons (now replaced), this design allows for expanded options and seamless keypad integration. The code architecture was carefully crafted to facilitate effortless future expansions.
 
 ## Installation and Execution
-1- Ensure inclusion of all LCD and EEPROM source and header files.
-
+1- Ensure inclusion of all LCD, EEPROM, and keypad source and header files.
 2- For Proteus simulation, load the HEX file onto the PIC MCU.
 
 ## Code Overview
-Developed using MPLAB X IDE, the code features comprehensive comments elucidating the system's functioning. Key to the code's versatility is the dual functionality of "1" and "2" buttons—navigational on the main menu and as password inputs in other screens. The code utilizes flags to determine the active screen, enabling dynamic button functionalities (flag explanations provided in comments). Future enhancements are planned, incorporating a three-attempt password feature with a 5-minute cooldown, for which the groundwork with TMR1 module initializations has been laid.
+Developed in MPLAB X IDE, the code offers detailed comments clarifying its operations. Notably, the keypad replaces previous buttons for increased functionality. Flags manage active screens, enabling dynamic key operations. A recent addition includes a user lockout feature after 5 unsuccessful attempts, with a 4-minute lock duration, along with EEPROM password protection. Importantly, both time and retry counts persist in EEPROM even after restarts.
 
 ## Functionality
-Upon startup, the digital lock prompts the user to set an initial password. The main menu presents two options: entering the password or changing it. Notably, the lock retains the password even after power cycles, ensuring continued security. Password modification requires entry of the old password followed by the new one. Incorrect password inputs redirect users to the main menu. Future developments will include a three-attempt mechanism with a cooldown period, facilitated by existing TMR1 module initializations.
+Upon startup, users set an initial password. The main menu offers options for password entry or modification, securely retained through power cycles. Incorrect inputs redirect users to the main menu. Future developments aim to incorporate a three-attempt mechanism with a cooldown, utilizing existing TMR1 module initializations.
 
 ## Code Adaptation
-To integrate a keypad, modification involves renaming the button inputs and replicating the code logic across the keypad digits (0-9). Encouraging code modularity, it's advisable to create a function that retrieves characters based on the keypad digits rather than direct replication.
+For keypad integration, modifications involve mapping keypad inputs and logic across digits (0-9). Encouraging modularity, functions to retrieve characters based on keypad inputs streamline the code for enhanced readability and scalability.
