@@ -13,10 +13,6 @@
 //FUNCTIONS OF EEPROM.h 
 //EEPROM_Write(uint8_t address,uint8_t data)->write data to address ,EEPROM_Read(uint8_t address)->returns data
 #define _XTAL_FREQ 4000000
-#define keypad_1 RD0
-#define keypad_2 RD1
-#define keypad_back RD2
-#define keypad_enter RD3
 #define c1 RD0 //c as in column
 #define c2 RD1
 #define c3 RD2
